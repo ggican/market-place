@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { FC } from "react";
 
-import Image from "next/image";
 import Icon from "@components/Icon";
 
 const Invoice: FC<any> = ({ total, image, productTitle }) => {

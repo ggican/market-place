@@ -1,6 +1,4 @@
-import { IButtonProps } from "#src/components/Button/Button.types.js";
-
-export const BookListMock: IButtonPropss = [
+export const BookListMock = [
   {
     id: 1,
     title: "Testing",

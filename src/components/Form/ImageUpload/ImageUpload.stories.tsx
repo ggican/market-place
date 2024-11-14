@@ -1,5 +1,6 @@
-import ImageUpload from "@components/Form/ImageUpload";
 import type { Meta, StoryObj } from "@storybook/react";
+
+import ImageUpload from "@components/Form/ImageUpload";
 
 const meta: Meta<typeof ImageUpload> = {
   component: ImageUpload,

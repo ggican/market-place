@@ -14,7 +14,27 @@ type Story = StoryObj<typeof AdminSidebar>;
 
 export const LayoutAdminDefault: Story = {
   args: {
-    block: true,
-    children: "Open Button",
+    menu: [
+      {
+        title: "Home",
+        link: "/admin",
+        icon: "home",
+      },
+      {
+        title: "Products",
+        link: "/admin/products",
+        icon: "file",
+      },
+      {
+        title: "Sales",
+        link: "/admin/sales",
+        icon: "chart",
+      },
+      {
+        title: "Settings",
+        link: "/admin/settings",
+        icon: "gear",
+      },
+    ],
   },
 };

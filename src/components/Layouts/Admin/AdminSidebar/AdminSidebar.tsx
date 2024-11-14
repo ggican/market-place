@@ -1,10 +1,11 @@
 "use client";
 
-import Icon from "@components/Icon";
-import { IconKeys } from "@components/Icon/Icon.types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
+
+import Icon from "@components/Icon";
+import { IconKeys } from "@components/Icon/Icon.types";
 
 export type TMenu = {
   title: string;

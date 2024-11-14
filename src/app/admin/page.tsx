@@ -1,10 +1,11 @@
 "use client";
 
+import { useQuery } from "@tanstack/react-query";
+
 import BarChart from "@components/Charts/BarChart";
 import { TDataItem } from "@components/Charts/BarChart/BarChart";
 import List from "@components/List";
-import { getProductListService, getProductReport } from "@services/product-services";
-import { useQuery } from "@tanstack/react-query";
+import { getProductReport } from "@services/product-services";
 
 const AdminHomePage = () => {
   const {

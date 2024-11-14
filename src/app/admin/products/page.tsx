@@ -1,16 +1,17 @@
 // AdminProductsPage.tsx
 "use client";
 
-import { useMutation, useQuery } from "@tanstack/react-query";
-import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { getProductCategoriesService, postProductService } from "@services/product-services";
-import RadioInput from "@components/Form/RadioInput";
-import { z } from "zod";
-import ImageUpload from "@components/Form/ImageUpload";
-import { useSnackbar } from "@providers/SnackbarProvider";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import { useState } from "react";
+import { Controller, useForm } from "react-hook-form";
+import { z } from "zod";
+
 import Button from "@components/Form/Button";
+import ImageUpload from "@components/Form/ImageUpload";
+import RadioInput from "@components/Form/RadioInput";
+import { useSnackbar } from "@providers/SnackbarProvider";
+import { getProductCategoriesService, postProductService } from "@services/product-services";
 
 // Define the validation schema
 const productSchema = z.object({
@@ -28,11 +29,7 @@ type ProductSchema = z.infer<typeof productSchema>;
 const AdminProductsPage = () => {
   const { showSnackbar } = useSnackbar();
   const [isLoadingSubmit, setLoading] = useState<boolean>(false);
-  const {
-    data: responseProductCategories,
-    isLoading,
-    error,
-  } = useQuery({
+  const { data: responseProductCategories, isLoading } = useQuery({
     queryKey: ["get-product-categories"],
     queryFn: getProductCategoriesService,
   });
@@ -61,12 +58,14 @@ const AdminProductsPage = () => {
         reset();
         resetPostProduct();
         showSnackbar(result?.data?.message, "success");
+      } else {
+        showSnackbar("Failed Submit Form Try Again", "error");
       }
 
       setLoading(false);
-      // Submit the form data here to the server
-    } catch (err) {
-      console.error("Submission error:", err);
+    } catch (_) {
+      showSnackbar("Failed Submit Form Try Again", "error");
+      setLoading(false);
     }
   };
 

@@ -1,6 +1,7 @@
 // components/Input/Input.tsx
+import { forwardRef } from "react";
+
 import { TTextInput } from "@components/Form/TextInput/TextInput.types";
-import React, { forwardRef } from "react";
 
 // Forward the ref to the input
 const TextInput = forwardRef<HTMLInputElement, TTextInput>(({ block = false, ...props }, ref) => {

@@ -2,12 +2,11 @@
 
 import { useSuspenseQuery } from "@tanstack/react-query";
 
-import Container from "@components/Layouts/External/ExternalContainer";
-import { getProductListService } from "@services/product-services";
-import Content from "@components/Layouts/External/ExternalContent";
 import Balance from "@components/Balance";
 import Invoice from "@components/Invoice";
+import Content from "@components/Layouts/External/ExternalContent";
 import ProductCard from "@components/ProductCard";
+import { getProductListService } from "@services/product-services";
 
 export default function HomePage() {
   const { data } = useSuspenseQuery({

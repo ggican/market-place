@@ -1,8 +1,5 @@
-import { FC } from "react";
-
-import Ellipse from "../../../public/ellipse-red.png";
 import Image from "next/image";
-import Container from "@components/Layouts/External/ExternalContainer";
+import { FC } from "react";
 
 const Balance: FC<any> = ({ balance, name }) => {
   return (

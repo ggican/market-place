@@ -1,11 +1,10 @@
 /* eslint-disable no-use-before-define */
+import { LandingPageProvider } from "@providers/LandingPageProviders";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { render, RenderOptions } from "@testing-library/react";
 import type { FC, ReactElement } from "react";
-import React, { useState } from "react";
-
-import { TChildrenElement } from "@import/types/react.types";
-import { LandingPageProvider } from "@import/providers/LandingPageProviders";
+import { useState } from "react";
+import { TChildrenElement } from "src/types/react.types";
 
 /* React Testing Library */
 
@@ -26,6 +25,6 @@ const customRender = (ui: ReactElement, options?: Omit<RenderOptions, "wrapper">
 /* Re-export testing related helpers */
 export * from "@testing-library/react";
 export { default as userEvent } from "@testing-library/user-event";
-export { customRender as render };
-export { mswServer } from "./mocks/msw-server";
 export { http } from "msw";
+export { mswServer } from "./mocks/msw-server";
+export { customRender as render };

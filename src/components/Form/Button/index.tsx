@@ -1,6 +1,3 @@
-import Icon from "@components/Icon";
-import { useState } from "react";
-
 const Button = ({ isLoading, type, children }: any) => {
   return (
     <>

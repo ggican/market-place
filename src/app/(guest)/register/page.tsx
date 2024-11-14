@@ -4,8 +4,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { TRegisterPayload } from "src/types/user.types";
 import { z } from "zod";
+
+import { TRegisterPayload } from "src/types/user.types";
 
 // Define the Zod schema for registration form
 const registerSchema = z.object({

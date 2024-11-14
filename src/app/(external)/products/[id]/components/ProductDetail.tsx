@@ -1,10 +1,11 @@
 "use client";
 
+import Link from "next/link";
+
 import QuantityInput from "@components/Form/QuantityInput";
 import Icon from "@components/Icon";
 import Content from "@components/Layouts/External/ExternalContent";
 import ProductCard from "@components/ProductCard";
-import Link from "next/link";
 
 export default function ProductDetail() {
   return (

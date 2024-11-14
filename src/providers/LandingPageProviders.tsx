@@ -1,7 +1,8 @@
 "use client";
 
-import { SnackbarProvider } from "@providers/SnackbarProvider";
 import { createContext, useContext } from "react";
+
+import { SnackbarProvider } from "@providers/SnackbarProvider";
 
 type LandingPageProvidersProps = {
   children?: any;

@@ -1,7 +1,7 @@
-import { FC } from "react";
 import Image from "next/image";
+import { FC } from "react";
+
 import { TProductCardProps } from "@components/ProductCard/ProductCard.types";
-import { p } from "msw/lib/core/GraphQLHandler-Cjm7JNGi";
 
 const ProductCard: FC<TProductCardProps> = ({
   totalQuantity,

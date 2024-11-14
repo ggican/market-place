@@ -1,18 +1,17 @@
-import "../global.css";
+import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Mulish } from "next/font/google";
+import "../global.css";
 
+import { getQueryClient } from "@app/get-query-client";
+import AdminHeader from "@components/Layouts/Admin/AdminHeader";
+import AdminSidebar from "@components/Layouts/Admin/AdminSidebar";
 import { WebVitals } from "@components/web-vitals";
 import StyledComponentsRegistry from "@lib/registry";
 import { LandingPageProvider } from "@providers/LandingPageProviders";
 import Providers from "@providers/tanstackQueryProviders";
-import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { getProductListService } from "@services/product-services";
-import { getQueryClient } from "@app/get-query-client";
-import AdminSidebar from "@components/Layouts/Admin/AdminSidebar";
-import AdminHeader from "@components/Layouts/Admin/AdminHeader";
-import { SnackbarProvider } from "@providers/SnackbarProvider";
 
 if (process.env.NEXT_PUBLIC_API_MOCKING === "enabled") {
   require("@import/lib/mocks/msw-init");

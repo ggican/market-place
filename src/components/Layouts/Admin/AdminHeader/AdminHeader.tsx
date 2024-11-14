@@ -1,7 +1,8 @@
 "use client";
 
-import Icon from "@components/Icon";
 import React from "react";
+
+import Icon from "@components/Icon";
 
 const AdminHeader: React.FC<any> = () => {
   return (

@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import Icon from "@components/Icon"; // Assuming you have an Icon component
 
 const QuantityInput = () => {

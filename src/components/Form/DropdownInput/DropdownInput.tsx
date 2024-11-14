@@ -1,4 +1,5 @@
-import { useState, useRef, useEffect, FC } from "react";
+import { FC, useEffect, useRef, useState } from "react";
+
 import { DropDownOption, SelectDropdownProps } from "./DropdownInput.types";
 
 const DropdownInput: FC<SelectDropdownProps> = ({ options, label, size = "md" }) => {

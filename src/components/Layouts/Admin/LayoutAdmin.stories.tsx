@@ -14,7 +14,6 @@ type Story = StoryObj<typeof LayoutAdmin>;
 
 export const LayoutAdminDefault: Story = {
   args: {
-    block: true,
     children: "Open Button",
   },
 };

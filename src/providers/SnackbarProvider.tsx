@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useCallback, ReactNode } from "react";
+import React, { createContext, ReactNode, useCallback, useContext, useState } from "react";
 
 // Define types for Snackbar context and state
 interface SnackbarContextType {
@@ -25,8 +25,6 @@ export const SnackbarProvider: React.FC<SnackbarProviderProps> = ({ children }) 
     type: "success",
     isOpen: false,
   });
-
-  console.log(snackbar, "snackbar");
 
   // Function to show the snackbar
   const showSnackbar = useCallback((message: string, type: "success" | "error" = "success") => {

@@ -1,5 +1,6 @@
 // components/RadioButton/RadioButton.stories.tsx
 import type { Meta, StoryObj } from "@storybook/react";
+
 import RadioButton from ".";
 
 const meta: Meta<typeof RadioButton> = {
@@ -33,7 +34,7 @@ export const DefaultRadioButton: Story = {
       },
     ],
     name: "radio-group",
-    onChange: (value: string | number) => {
+    onChange: (value?: string | number) => {
       console.log("Selected:", value);
     },
   },

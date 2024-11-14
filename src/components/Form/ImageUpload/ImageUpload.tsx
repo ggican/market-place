@@ -1,5 +1,7 @@
-import Icon from "@components/Icon";
+/* eslint-disable @next/next/no-img-element */
 import { useState } from "react";
+
+import Icon from "@components/Icon";
 
 const ImageUploadComponent = ({ value, onChange }: any) => {
   const [imagePreview, setImagePreview] = useState(value || null);

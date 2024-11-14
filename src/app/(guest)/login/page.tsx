@@ -1,10 +1,11 @@
 // LoginForm.tsx
 "use client";
+import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+
 import { TLoginPayload } from "src/types/user.types";
 
 // Define the schema with zod
