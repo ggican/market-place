@@ -1,6 +1,8 @@
+import { getSession } from "next-auth/react";
+
 import { TErrorResponse, TypeAPIResponse } from "src/types/response.types";
 
-const errorResponse = (e: unknown): TErrorResponse => {
+export const errorResponse = (e: unknown): TErrorResponse => {
   if (e instanceof Error) {
     return {
       code: "RUNTIME_ERROR",
@@ -21,6 +23,7 @@ const fetchAPI = async <T>(
   method: string,
   params?: any,
   payload?: any,
+  guestMode?: boolean,
 ): Promise<TypeAPIResponse<T, any>> => {
   try {
     let currentUrl: string = `${process.env.NEXT_PUBLIC_BASE_API}${url}`;
@@ -28,29 +31,24 @@ const fetchAPI = async <T>(
       currentUrl = `${process.env.NEXT_PUBLIC_BASE_API}${url}?${new URLSearchParams(params).toString()}`;
     }
 
-    let fetchObj: any = {
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    if (!guestMode) {
+      const status: any = getSession();
+      myHeaders.append("token", (await status)?.response);
+    }
+
+    const requestOptions: any = {
       method: method,
-      headers: {
-        token: `${process.env.NEXT_PUBLIC_TOKEN}`,
-        accept: "application/json",
-      },
+      headers: myHeaders,
+      redirect: "follow",
     };
 
     if (payload) {
-      fetchObj.body = payload;
+      requestOptions.body = JSON.stringify(payload);
     }
-
-    const response = await fetch(currentUrl, {
-      method: method,
-      headers: {
-        token: `${process.env.NEXT_PUBLIC_TOKEN}`,
-        accept: "application/json",
-      },
-    });
-    if (!response.ok) {
-      throw new Error(`Response status: ${response.status}`);
-    }
-    // const json = (await response.json()) as T;
+    const response = await fetch(currentUrl, requestOptions);
     return {
       data: await response.json(),
     } as TypeAPIResponse<T, undefined>;

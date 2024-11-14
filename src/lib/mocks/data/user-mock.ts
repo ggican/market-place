@@ -24,6 +24,6 @@ export const UserInfoSuccessMock = {
   message: "Success get user info",
   response: {
     id: 1,
-    name: "Taufik Hidayat",
+    name: "Taufik Hidayat Test",
   },
 };

@@ -37,7 +37,7 @@ export default function RootLayout({
             <LandingPageProvider>
               <main className="w-full h-screen bg-primary flex justify-center items-center">
                 <WebVitals></WebVitals>
-                <div className="flex items-center justify-center bg-gray-100 w-[450px]">
+                <div className="flex items-center justify-center bg-gray-100 w-[450px] p-[26px]">
                   <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-lg">
                     {children}
                   </div>
