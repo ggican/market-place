@@ -18,7 +18,7 @@
     "lint:js": "next lint",
     "lint:css": "stylelint \"**/*.scss\"",
     "type-check": "tsc --pretty --noEmit",
-    "test:ci": "TZ=Asia/Jakarta jest --coverage jest --coverage",
+    "test:ci": "TZ=Asia/Jakarta jest --coverage",
     "test:watch": "TZ=Asia/Jakarta jest --watch",
     "check-all": "npm run type-check && npm run lint:js && npm run format && npm test:ci",
     "chromatic": "npx chromatic --project-token=chpt_89234c3b37066ec"
