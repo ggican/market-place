@@ -26,7 +26,7 @@ const QuantityInput = () => {
         value={quantity}
         onChange={(e) => setQuantity(Math.max(0, Number(e.target.value)))}
         placeholder="0"
-        className="w-[106px] text-center h-[55px] text-[38px] mx-[10px] rounded-[10px] border-[1px] border-primary bg-white"
+        className="appearance-none -webkit-appearance-none -moz-appearance-none w-[106px] text-center h-[55px] text-[38px] mx-[10px] rounded-[10px] border-[1px] border-primary bg-white"
       />
 
       <button onClick={increaseQuantity}>

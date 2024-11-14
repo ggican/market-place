@@ -13,7 +13,7 @@ export interface TProduct {
   category_id: string | null;
   price: number | null;
   user_id: number;
-  image: string | null;
+  image?: string | null;
   active: number;
   created_at: string;
   updated_at: string | null;

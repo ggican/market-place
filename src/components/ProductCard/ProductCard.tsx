@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { FC } from "react";
+import Link from "next/link";
+import { FC, useState } from "react";
 
 import { TProductCardProps } from "@components/ProductCard/ProductCard.types";
 
@@ -10,17 +11,24 @@ const ProductCard: FC<TProductCardProps> = ({
   totalPrice,
   category,
   isDetail,
+  url = "/",
 }) => {
+  const [src, setSrc] = useState(image);
   return (
-    <div className="relative flex justify-between rounded-md shadow-custom-blue items-center">
+    <Link
+      href={url}
+      className="relative flex justify-between rounded-md shadow-custom-blue items-center"
+    >
       <div className="flex relative w-full">
         <Image
+          priority={true}
           alt="product image"
-          src={image ? image : "/no-image.png"}
+          src={src ? src : "/no-image.png"}
           width={0}
           height={0}
-          objectFit="contain"
           sizes="100vw"
+          blurDataURL="/no-image.png"
+          onError={() => setSrc("/no-image.png")}
           className={!isDetail ? "rounded-md" : "rounded-[20px]"}
           style={{ width: "100%", height: isDetail ? "55vh" : "214px", objectFit: "cover" }}
         />
@@ -39,19 +47,21 @@ const ProductCard: FC<TProductCardProps> = ({
             <p className="font-roboto text-[23.69px] font-bold leading-[27.76px] tracking-[0.075em] text-left text-white">
               {title}
             </p>
-            {category ? (
-              <p className="font-roboto text-[16.96px] font-medium leading-[19.88px] text-left text-white mt-1">
-                {totalPrice} / pc
-              </p>
-            ) : (
-              <p className="font-roboto text-[16.96px] font-medium leading-[19.88px] text-left text-white mt-1">
-                {totalQuantity}x | total of {totalPrice}
-              </p>
-            )}
+            {category
+              ? totalPrice && (
+                  <p className="font-roboto text-[16.96px] font-medium leading-[19.88px] text-left text-white mt-1">
+                    {totalPrice} / pc
+                  </p>
+                )
+              : totalPrice && (
+                  <p className="font-roboto text-[16.96px] font-medium leading-[19.88px] text-left text-white mt-1">
+                    {totalQuantity}x | total of {totalPrice}
+                  </p>
+                )}
           </div>
         )}
       </div>
-    </div>
+    </Link>
   );
 };
 

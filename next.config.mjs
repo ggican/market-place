@@ -28,6 +28,16 @@ const nextConfig = {
         hostname: "image.tmdb.org",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.7tv.app",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "placehold.co",
+        port: "",
+      },
     ],
   },
   sassOptions: {
