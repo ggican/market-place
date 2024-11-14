@@ -47,7 +47,7 @@ const Balance: FC<any> = ({ balance, name }) => {
                     width="341"
                     height="202"
                     fill="#CCEDFF"
-                    fill-opacity="0.42"
+                    fillOpacity="0.42"
                   />
                   <circle cx="24.5" cy="22.5" r="69.5" fill="#0099EE" />
                 </g>
@@ -60,8 +60,8 @@ const Balance: FC<any> = ({ balance, name }) => {
                     y2="167"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop stop-color="#0099EE" />
-                    <stop offset="1" stop-color="#EBEBEB" stop-opacity="0" />
+                    <stop stopColor="#0099EE" />
+                    <stop offset="1" stopColor="#EBEBEB" stopOpacity="0" />
                   </linearGradient>
                 </defs>
               </svg>
