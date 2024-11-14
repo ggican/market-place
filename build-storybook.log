@@ -1,19 +1,19 @@
 
 > next-test-profile@0.1.0 build-storybook
-> storybook build --output-dir=/var/folders/g_/mt_79tk174128n1j4b42sqs40000gp/T/chromatic--31252-v06kpQNgTnjO
+> storybook build --output-dir=/var/folders/g_/mt_79tk174128n1j4b42sqs40000gp/T/chromatic--44192-Xns9J1u0XhJ3
 
-[1m@storybook/core v8.4.2
+[1m@storybook/core v8.4.3
 [22m
-info => Cleaning outputDir: [36m../../../../../var/folders/g_/mt_79tk174128n1j4b42sqs40000gp/T/chromatic--31252-v06kpQNgTnjO[39m
+info => Cleaning outputDir: [36m../../../../../var/folders/g_/mt_79tk174128n1j4b42sqs40000gp/T/chromatic--44192-Xns9J1u0XhJ3[39m
 info => Loading presets
 info => Building manager..
-info => Manager built ([38;2;181;126;229m127 ms[39m)
+info => Manager built ([38;2;181;126;229m165 ms[39m)
 info => Building preview..
 info Addon-docs: using MDX3
 info => Using implicit CSS loaders
 info => Using SWC as compiler
 info => Using default Webpack5 setup
-info => Copying static files: [36mpublic[39m at [36m../../../../../var/folders/g_/mt_79tk174128n1j4b42sqs40000gp/T/chromatic--31252-v06kpQNgTnjO[39m
+info => Copying static files: [36mpublic[39m at [36m../../../../../var/folders/g_/mt_79tk174128n1j4b42sqs40000gp/T/chromatic--44192-Xns9J1u0XhJ3[39m
 info Using tsconfig paths for react-docgen
 WARN asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
 WARN This can impact web performance.
@@ -28,5 +28,11 @@ WARN       runtime~main.62db1648.iframe.bundle.js
 WARN       6929.9c9238ce.iframe.bundle.js
 WARN       main.b48c975d.iframe.bundle.js
 WARN 
-info => Preview built ([38;2;181;126;229m11 s[39m)
-info => Output directory: /var/folders/g_/mt_79tk174128n1j4b42sqs40000gp/T/chromatic--31252-v06kpQNgTnjO
+info => Preview built ([38;2;181;126;229m14 s[39m)
+info => Output directory: /var/folders/g_/mt_79tk174128n1j4b42sqs40000gp/T/chromatic--44192-Xns9J1u0XhJ3
+
+[35m[1mattention[22m[39m => Storybook now collects completely anonymous telemetry regarding usage.
+This information is used to shape Storybook's roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+[36mhttps://storybook.js.org/telemetry[39m
+
