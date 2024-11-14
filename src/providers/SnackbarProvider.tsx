@@ -44,7 +44,7 @@ export const SnackbarProvider: React.FC<SnackbarProviderProps> = ({ children }) 
             snackbar.type === "success" ? "bg-success" : "bg-danger"
           }`}
         >
-          <p className="snackbar-">{message}</p>
+          <p className="snackbar-">{snackbar.message}</p>
         </div>
       )}
     </SnackbarContext.Provider>
