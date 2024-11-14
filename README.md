@@ -1,3 +1,5 @@
+# FOR ACCESS WEBSITE JUST PRESS SUBMIT BUTTON LOGIN PAGE
+
 # Project Overview
 
 This project is a Next.js application that includes several services, components, and tools to build a robust user interface. It integrates with **Storybook** for component documentation, **Chromatic** for visual testing, and **MSW (Mock Service Worker)** for API mocking. It is a multi-environment application, meaning it can be configured to run in different environments (e.g., development, production).
