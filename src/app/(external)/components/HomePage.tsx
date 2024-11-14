@@ -55,11 +55,11 @@ export default function HomePage() {
         <div className="text-primary pl-[36px] block my-[12px] font-roboto text-[16.08px] font-bold leading-[18.84px] tracking-[0.075em] text-left">
           OUR LATEST PRODUCT
         </div>
-        <div className="space-x-4 overflow-auto whitespace-nowrap inline-block w-full">
+        <div className="space-x-2 overflow-auto whitespace-nowrap inline-block w-full">
           {productList?.map((item: TProduct, key: number) => {
             return (
               <div key={key} className="first:pl-[36px] last:pr-[30px] inline-flex">
-                <div className="w-[176px]  inline-flex ">
+                <div className="w-[176px] inline-flex ">
                   <ProductCard
                     {...{
                       url: `/products/${item?.id}`,

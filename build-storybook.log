@@ -1,19 +1,19 @@
 
 > next-test-profile@0.1.0 build-storybook
-> storybook build --output-dir=/var/folders/g_/mt_79tk174128n1j4b42sqs40000gp/T/chromatic--44192-Xns9J1u0XhJ3
+> storybook build --output-dir=/var/folders/g_/mt_79tk174128n1j4b42sqs40000gp/T/chromatic--67532-1M0jYirvmKAV
 
 [1m@storybook/core v8.4.3
 [22m
-info => Cleaning outputDir: [36m../../../../../var/folders/g_/mt_79tk174128n1j4b42sqs40000gp/T/chromatic--44192-Xns9J1u0XhJ3[39m
+info => Cleaning outputDir: [36m../../../../../var/folders/g_/mt_79tk174128n1j4b42sqs40000gp/T/chromatic--67532-1M0jYirvmKAV[39m
 info => Loading presets
 info => Building manager..
-info => Manager built ([38;2;181;126;229m165 ms[39m)
+info => Manager built ([38;2;181;126;229m131 ms[39m)
 info => Building preview..
 info Addon-docs: using MDX3
 info => Using implicit CSS loaders
 info => Using SWC as compiler
 info => Using default Webpack5 setup
-info => Copying static files: [36mpublic[39m at [36m../../../../../var/folders/g_/mt_79tk174128n1j4b42sqs40000gp/T/chromatic--44192-Xns9J1u0XhJ3[39m
+info => Copying static files: [36mpublic[39m at [36m../../../../../var/folders/g_/mt_79tk174128n1j4b42sqs40000gp/T/chromatic--67532-1M0jYirvmKAV[39m
 info Using tsconfig paths for react-docgen
 WARN asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
 WARN This can impact web performance.
@@ -24,15 +24,9 @@ WARN   6929.9c9238ce.iframe.bundle.js (2.01 MiB)
 WARN entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
 WARN Entrypoints:
 WARN   main (2.08 MiB)
-WARN       runtime~main.62db1648.iframe.bundle.js
+WARN       runtime~main.30509774.iframe.bundle.js
 WARN       6929.9c9238ce.iframe.bundle.js
-WARN       main.b48c975d.iframe.bundle.js
+WARN       main.7157a210.iframe.bundle.js
 WARN 
-info => Preview built ([38;2;181;126;229m14 s[39m)
-info => Output directory: /var/folders/g_/mt_79tk174128n1j4b42sqs40000gp/T/chromatic--44192-Xns9J1u0XhJ3
-
-[35m[1mattention[22m[39m => Storybook now collects completely anonymous telemetry regarding usage.
-This information is used to shape Storybook's roadmap and prioritize features.
-You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
-[36mhttps://storybook.js.org/telemetry[39m
-
+info => Preview built ([38;2;181;126;229m8.63 s[39m)
+info => Output directory: /var/folders/g_/mt_79tk174128n1j4b42sqs40000gp/T/chromatic--67532-1M0jYirvmKAV
