@@ -12,7 +12,7 @@ import Providers from "@providers/tanstackQueryProviders";
 import { getProductListService } from "@services/product-services";
 
 if (process.env.NEXT_PUBLIC_API_MOCKING === "enabled") {
-  require("../../lib/mocks/msw-init");
+  // require("@lib/mocks/msw-init");
 }
 
 const MulishFont = Mulish({
