@@ -1,7 +1,7 @@
-import "../global.css";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Mulish } from "next/font/google";
+import "../global.css";
 
 import { WebVitals } from "@components/web-vitals";
 import StyledComponentsRegistry from "@lib/registry";
@@ -9,7 +9,7 @@ import { LandingPageProvider } from "@providers/LandingPageProviders";
 import Providers from "@providers/tanstackQueryProviders";
 
 if (process.env.NEXT_PUBLIC_API_MOCKING === "enabled") {
-  require("@import/lib/mocks/msw-init");
+  require("../../lib/mocks/msw-init");
 }
 
 const MulishFont = Mulish({
