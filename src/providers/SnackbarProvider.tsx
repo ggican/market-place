@@ -44,11 +44,7 @@ export const SnackbarProvider: React.FC<SnackbarProviderProps> = ({ children }) 
             snackbar.type === "success" ? "bg-success" : "bg-danger"
           }`}
         >
-          <p className="snackbar-">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorem laborum
-            voluptatem natus nemo sit, obcaecati, dignissimos et voluptate quos, consectetur porro
-            fuga corporis? Voluptatum minus ea est possimus ipsam!
-          </p>
+          <p className="snackbar-">{message}</p>
         </div>
       )}
     </SnackbarContext.Provider>
