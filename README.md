@@ -89,3 +89,37 @@ The following scripts are defined in the `package.json` file to automate common 
   ```bash
   npm run chromatic
   ```
+
+
+
+
+---
+
+## Page
+
+you can open page in the website :
+
+- **`(external)`**:  
+  This is for external user or end user to visit website
+  ```bash
+  (external)
+    - "/" Home Page External
+    - "/products/:id" Product Detail
+  ```
+
+- **`admin`**:  
+  This is for admin user for access dashboard
+  ```bash
+  admin
+    - "/admin" Home Page Admin
+    - "/admin/products" Product Form
+  ```
+
+- **`(guest)`**:  
+  This is for guest user no access to website
+  ```bash
+  (guest)
+    - "/login" Login Page
+    - "/register" Register Page
+  ```
+
