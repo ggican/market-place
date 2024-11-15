@@ -12,7 +12,11 @@ import ProductCard from "@components/ProductCard";
 import { getProductDetailByIdService } from "@services/product-services";
 
 export default function ProductDetail({ id }: { id: string }) {
-  const { data: productDetailResponse, isLoading }: any = useQuery({
+  const {
+    data: productDetailResponse,
+    isLoading,
+    isFetching,
+  }: any = useQuery({
     queryKey: ["get-product-detail", id],
     queryFn: () => {
       return getProductDetailByIdService(id);
@@ -35,7 +39,7 @@ export default function ProductDetail({ id }: { id: string }) {
         </Content>
       </header>
 
-      {isLoading ? (
+      {isLoading || isFetching ? (
         <div className="block min-h-screen">
           <div className="animate-pulse flex space-x-4">
             <div className="flex-1 space-y-6 py-1">

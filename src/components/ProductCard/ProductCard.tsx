@@ -19,18 +19,32 @@ const ProductCard: FC<TProductCardProps> = ({
       href={url}
       className="relative flex justify-between rounded-md shadow-custom-blue items-center w-full"
     >
-      <Image
-        priority={true}
-        alt="product image"
-        src={src ? src : "/no-image.png"}
-        width={0}
-        height={0}
-        sizes="100vw"
-        blurDataURL="/no-image.png"
-        onError={() => setSrc("/no-image.png")}
-        className={!isDetail ? "rounded-md" : "rounded-[20px]"}
-        style={{ width: "100%", height: isDetail ? "55vh" : "214px", objectFit: "cover" }}
-      />
+      <div
+        className="w-full"
+        style={{
+          width: "100%",
+          minHeight: isDetail ? "55vh" : "214px",
+          objectFit: "cover",
+        }}
+      >
+        <Image
+          priority={true}
+          alt="product image"
+          src={src ? src : "/no-image.png"}
+          width={0}
+          height={0}
+          sizes="100vw"
+          blurDataURL="/no-image.png"
+          onError={() => setSrc("/no-image.png")}
+          className={!isDetail ? "rounded-md" : "rounded-[20px]"}
+          style={{
+            width: "100%",
+            height: isDetail ? "55vh" : "214px",
+            minHeight: isDetail ? "55vh" : "214px",
+            objectFit: "cover",
+          }}
+        />
+      </div>
       {isDetail ? (
         <div className="pt-10 px-4 pb-4 bg-most-product-order-gradient absolute bottom-0 h-[50%] left-0 right-0 rounded-br-[20px] rounded-bl-[20px]"></div>
       ) : (
