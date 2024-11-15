@@ -1,6 +1,7 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
+import Image from "next/image";
 import Link from "next/link";
 import { useMemo } from "react";
 
@@ -71,42 +72,60 @@ export default function ProductDetail({ id }: { id: string }) {
         </div>
       ) : (
         <div className="block min-h-screen">
-          <ProductCard
-            {...{
-              isDetail: true,
-              image: productDetail?.image,
-              title: productDetail?.name,
-              category: "Dry Cleaning",
-              totalPrice: productDetail?.price
-                ? new Intl.NumberFormat("en-US", {
-                    style: "currency",
-                    currency: "USD",
-                  }).format(productDetail?.price)
-                : "",
-              totalQuantity: 12,
-            }}
-          ></ProductCard>
-          <div className="flex-col flex w-full mt-[40px] mb-[40px] items-start px-[26px]">
-            <div className="inline-block w-auto p-[8px] rounded-[6px] bg-secondary">
-              <span className="text-primary font-robot text-[13px] font-normal">Category</span>
+          {productDetail === null ? (
+            <div className="h-screen w-screen flex justify-center items-center">
+              <div className="w-[340px] h-[340px] p-[50px] rounded-full bg-white inline-flex justify-center items-center">
+                <Image
+                  priority={true}
+                  alt="product image"
+                  src="/404.png"
+                  width={320}
+                  height={320}
+                  sizes="100vw"
+                  className="rounded-lg"
+                />
+              </div>
             </div>
-            <p className="mt-[14px] text-primary font-roboto text-[44px] font-bold leading-[51.56px] tracking-[0.075em] text-left decoration-solid">
-              {productDetail?.name}
-            </p>
-            <p className="font-robot font-medium text-[27px] text-primary py-[14px]">
-              {productDetail?.price
-                ? new Intl.NumberFormat("en-US", {
-                    style: "currency",
-                    currency: "USD",
-                  }).format(productDetail?.price)
-                : "-"}{" "}
-              / pc
-            </p>
-            <p className="block text-wrap font-roboto text-[16px] font-normal leading-[18px] text-left ">
-              {productDetail?.description}
-            </p>
-          </div>
-          <QuantityInput></QuantityInput>
+          ) : (
+            <>
+              <ProductCard
+                {...{
+                  isDetail: true,
+                  image: productDetail?.image,
+                  title: productDetail?.name,
+                  category: "Dry Cleaning",
+                  totalPrice: productDetail?.price
+                    ? new Intl.NumberFormat("en-US", {
+                        style: "currency",
+                        currency: "USD",
+                      }).format(productDetail?.price)
+                    : "",
+                  totalQuantity: 12,
+                }}
+              ></ProductCard>
+              <div className="flex-col flex w-full mt-[40px] mb-[40px] items-start px-[26px]">
+                <div className="inline-block w-auto p-[8px] rounded-[6px] bg-secondary">
+                  <span className="text-primary font-robot text-[13px] font-normal">Category</span>
+                </div>
+                <p className="mt-[14px] text-primary font-roboto text-[44px] font-bold leading-[51.56px] tracking-[0.075em] text-left decoration-solid">
+                  {productDetail?.name}
+                </p>
+                <p className="font-robot font-medium text-[27px] text-primary py-[14px]">
+                  {productDetail?.price
+                    ? new Intl.NumberFormat("en-US", {
+                        style: "currency",
+                        currency: "USD",
+                      }).format(productDetail?.price)
+                    : "-"}{" "}
+                  / pc
+                </p>
+                <p className="block text-wrap font-roboto text-[16px] font-normal leading-[18px] text-left ">
+                  {productDetail?.description}
+                </p>
+              </div>
+              <QuantityInput></QuantityInput>
+            </>
+          )}
         </div>
       )}
     </Content>

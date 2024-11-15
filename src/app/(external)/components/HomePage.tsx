@@ -1,25 +1,47 @@
 "use client";
 
-import { useSuspenseQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
 
 import Balance from "@components/Balance";
 import Invoice from "@components/Invoice";
 import Content from "@components/Layouts/External/ExternalContent";
 import ProductCard from "@components/ProductCard";
-import { getProductListService } from "@services/product-services";
+import { getProductCategoriesService, getProductListService } from "@services/product-services";
 import { TProduct } from "src/types/product.types";
 
 export default function HomePage() {
-  const { data: responseProductList }: any = useSuspenseQuery({
+  const { data: responseProductList }: any = useQuery({
     queryKey: ["get-product-list"],
     queryFn: getProductListService,
   });
+
+  const { data: responseProductCategories, isLoading } = useQuery({
+    queryKey: ["get-product-categories"],
+    queryFn: getProductCategoriesService,
+  });
+
+  const categoryList = useMemo(() => {
+    return responseProductCategories?.response || [];
+  }, [responseProductCategories]);
 
   const productList = useMemo(() => {
     return responseProductList?.data?.response || [];
   }, [responseProductList]);
 
+  const onGetCategoryLabel = (categoryId?: any) => {
+    let categoryLabel = "-";
+    if (categoryList && !isLoading && categoryId) {
+      for (let i = 0; i < categoryList.length; i++) {
+        if (categoryList[i].id === Number(categoryId)) {
+          categoryLabel = categoryList[i]?.name;
+          break;
+        }
+      }
+    }
+
+    return categoryLabel;
+  };
   return (
     <Content>
       <Balance balance="$200.000" name="Ikhsan Mahendri"></Balance>
@@ -65,7 +87,7 @@ export default function HomePage() {
                       url: `/products/${item?.id}`,
                       image: item?.image || "",
                       title: "T-Shirt",
-                      category: "Dry Cleaning",
+                      category: onGetCategoryLabel(item?.category_id),
                       totalPrice: item?.price
                         ? new Intl.NumberFormat("en-US", {
                             style: "currency",
